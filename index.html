@@ -1,0 +1,32 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>OpenWebPush</title>
+</head>
+
+<body>
+    <h1>Hello World!</h1>
+    <button id="myButton">Allow Notification</button>
+
+    <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-messaging.js"></script>
+
+    <script src="app.js"></script>
+    <script>
+        OpenWebPush({
+            messagingSenderId: "751917146133",
+            btn: "#myButton",
+            sendTokenToServer: (token) => {
+                console.log({token})
+            },
+            onMessage: (payload) => {
+                console.log(payload)
+            }
+        });
+    </script>
+</body>
+
+</html>
